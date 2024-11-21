@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MenusScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+  
+    public void PlayGame()
     {
-        
+        SceneManager.LoadScene("BounceProjectileOwen_Level1");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SettingsMenu()
     {
-        
+        SceneManager.LoadScene("ControlsScreen");
     }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
+
 }

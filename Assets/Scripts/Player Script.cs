@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Rigidbody2D rb;
+    public float speed = 20;
+
+    private float inputX;
+
+    private void Update()
     {
-        
+        inputX = Input.GetAxis("Horizontal");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        rb.velocity = new Vector2(inputX * speed, rb.velocity.y);
     }
+
+
+
+
+
+
+
+
 }

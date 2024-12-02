@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     //Float variables for the player's Speed and Jump Force.
     public float speed = 20f;
-    public float jumpforce = 10f;
+    public float jumpforce = 20f;
     //Public Float variable for checking the radius of the circle
     public float checkRadius;
     //Transform that checks the ground to see if the player's on it.
@@ -35,9 +35,9 @@ public class PlayerScript : MonoBehaviour
         Flip();
 
         //KeyCode for Space so the player can jump.
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
-            //
+            
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
         }
     }
